@@ -19,6 +19,7 @@
 		DF7A21891F1326DA00A59F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A21881F1326DA00A59F69 /* Assets.xcassets */; };
 		DF7A218C1F1326DA00A59F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7A218A1F1326DA00A59F69 /* LaunchScreen.storyboard */; };
 		DF7A21951F1327AB00A59F69 /* WBLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */; };
+		DFD1228A1F9DE8C60081B251 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFD122891F9DE8C50081B251 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		DF7A218B1F1326DA00A59F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF7A218D1F1326DA00A59F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguageManager.swift; sourceTree = "<group>"; };
+		DFD122891F9DE8C50081B251 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFD1228B1F9DE8DE0081B251 /* WBLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBLanguage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +93,18 @@
 				DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */,
 				DF42D4101F13714000B2B121 /* WBLanguage.swift */,
 				DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */,
+				DFD1228B1F9DE8DE0081B251 /* WBLanguage.h */,
+				DFD122881F9DE8C50081B251 /* Support Files */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		DFD122881F9DE8C50081B251 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFD122891F9DE8C50081B251 /* Info.plist */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +169,7 @@
 				DF7A218C1F1326DA00A59F69 /* LaunchScreen.storyboard in Resources */,
 				DF7A21891F1326DA00A59F69 /* Assets.xcassets in Resources */,
 				DF7A21871F1326DA00A59F69 /* Main.storyboard in Resources */,
+				DFD1228A1F9DE8C60081B251 /* Info.plist in Resources */,
 				DF42D41B1F13778600B2B121 /* Language.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
