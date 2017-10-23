@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF42D40B1F1363A500B2B121 /* WBLanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */; };
+		DF42D40D1F13679E00B2B121 /* WBLanguageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */; };
+		DF42D40F1F136D4300B2B121 /* WBLanguage+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */; };
+		DF42D4111F13714000B2B121 /* WBLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D4101F13714000B2B121 /* WBLanguage.swift */; };
+		DF42D41B1F13778600B2B121 /* Language.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF42D41A1F13778600B2B121 /* Language.bundle */; };
+		DF42D41D1F137D2700B2B121 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */; };
+		DF7A21821F1326DA00A59F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21811F1326DA00A59F69 /* AppDelegate.swift */; };
+		DF7A21841F1326DA00A59F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21831F1326DA00A59F69 /* ViewController.swift */; };
+		DF7A21871F1326DA00A59F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7A21851F1326DA00A59F69 /* Main.storyboard */; };
+		DF7A21891F1326DA00A59F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A21881F1326DA00A59F69 /* Assets.xcassets */; };
+		DF7A218C1F1326DA00A59F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7A218A1F1326DA00A59F69 /* LaunchScreen.storyboard */; };
+		DF7A21951F1327AB00A59F69 /* WBLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguagePicker.swift; sourceTree = "<group>"; };
+		DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguageExtension.swift; sourceTree = "<group>"; };
+		DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBLanguage+UIKit.swift"; sourceTree = "<group>"; };
+		DF42D4101F13714000B2B121 /* WBLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguage.swift; sourceTree = "<group>"; };
+		DF42D41A1F13778600B2B121 /* Language.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Language.bundle; sourceTree = "<group>"; };
+		DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		DF42D41F1F1382F000B2B121 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		DF7A217E1F1326DA00A59F69 /* WBLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7A21811F1326DA00A59F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF7A21831F1326DA00A59F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF7A21861F1326DA00A59F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF7A21881F1326DA00A59F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF7A218B1F1326DA00A59F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF7A218D1F1326DA00A59F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguageManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF7A217B1F1326DA00A59F69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF7A21751F1326D900A59F69 = {
+			isa = PBXGroup;
+			children = (
+				DF7A21801F1326DA00A59F69 /* WBLanguage */,
+				DF7A217F1F1326DA00A59F69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF7A217F1F1326DA00A59F69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A217E1F1326DA00A59F69 /* WBLanguage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF7A21801F1326DA00A59F69 /* WBLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A21931F13270600A59F69 /* Source */,
+				DF7A21811F1326DA00A59F69 /* AppDelegate.swift */,
+				DF7A21831F1326DA00A59F69 /* ViewController.swift */,
+				DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */,
+				DF42D41A1F13778600B2B121 /* Language.bundle */,
+				DF7A21851F1326DA00A59F69 /* Main.storyboard */,
+				DF7A21881F1326DA00A59F69 /* Assets.xcassets */,
+				DF7A218A1F1326DA00A59F69 /* LaunchScreen.storyboard */,
+				DF7A218D1F1326DA00A59F69 /* Info.plist */,
+			);
+			path = WBLanguage;
+			sourceTree = "<group>";
+		};
+		DF7A21931F13270600A59F69 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */,
+				DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */,
+				DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */,
+				DF42D4101F13714000B2B121 /* WBLanguage.swift */,
+				DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF7A217D1F1326DA00A59F69 /* WBLanguage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7A21901F1326DA00A59F69 /* Build configuration list for PBXNativeTarget "WBLanguage" */;
+			buildPhases = (
+				DF7A217A1F1326DA00A59F69 /* Sources */,
+				DF7A217B1F1326DA00A59F69 /* Frameworks */,
+				DF7A217C1F1326DA00A59F69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WBLanguage;
+			productName = WBLanguage;
+			productReference = DF7A217E1F1326DA00A59F69 /* WBLanguage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF7A21761F1326DA00A59F69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "HengSu Co., LTD";
+				TargetAttributes = {
+					DF7A217D1F1326DA00A59F69 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DF7A21791F1326DA00A59F69 /* Build configuration list for PBXProject "WBLanguage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF7A21751F1326D900A59F69;
+			productRefGroup = DF7A217F1F1326DA00A59F69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF7A217D1F1326DA00A59F69 /* WBLanguage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF7A217C1F1326DA00A59F69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF7A218C1F1326DA00A59F69 /* LaunchScreen.storyboard in Resources */,
+				DF7A21891F1326DA00A59F69 /* Assets.xcassets in Resources */,
+				DF7A21871F1326DA00A59F69 /* Main.storyboard in Resources */,
+				DF42D41B1F13778600B2B121 /* Language.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF7A217A1F1326DA00A59F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF42D40B1F1363A500B2B121 /* WBLanguagePicker.swift in Sources */,
+				DF42D4111F13714000B2B121 /* WBLanguage.swift in Sources */,
+				DF42D41D1F137D2700B2B121 /* LanguageViewController.swift in Sources */,
+				DF42D40D1F13679E00B2B121 /* WBLanguageExtension.swift in Sources */,
+				DF7A21841F1326DA00A59F69 /* ViewController.swift in Sources */,
+				DF42D40F1F136D4300B2B121 /* WBLanguage+UIKit.swift in Sources */,
+				DF7A21821F1326DA00A59F69 /* AppDelegate.swift in Sources */,
+				DF7A21951F1327AB00A59F69 /* WBLanguageManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DF7A21851F1326DA00A59F69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF7A21861F1326DA00A59F69 /* Base */,
+				DF42D41F1F1382F000B2B121 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF7A218A1F1326DA00A59F69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF7A218B1F1326DA00A59F69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF7A218E1F1326DA00A59F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF7A218F1F1326DA00A59F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF7A21911F1326DA00A59F69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WBLanguage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hengsu.demo.WBLanguage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		DF7A21921F1326DA00A59F69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WBLanguage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hengsu.demo.WBLanguage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF7A21791F1326DA00A59F69 /* Build configuration list for PBXProject "WBLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A218E1F1326DA00A59F69 /* Debug */,
+				DF7A218F1F1326DA00A59F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7A21901F1326DA00A59F69 /* Build configuration list for PBXNativeTarget "WBLanguage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A21911F1326DA00A59F69 /* Debug */,
+				DF7A21921F1326DA00A59F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF7A21761F1326DA00A59F69 /* Project object */;
+}
