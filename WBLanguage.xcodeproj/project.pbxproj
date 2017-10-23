@@ -56,7 +56,8 @@
 		DF7A21751F1326D900A59F69 = {
 			isa = PBXGroup;
 			children = (
-				DF7A21801F1326DA00A59F69 /* WBLanguage */,
+				DF7A21931F13270600A59F69 /* Source */,
+				DF7A21801F1326DA00A59F69 /* WBLanguageDemo */,
 				DF7A217F1F1326DA00A59F69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,10 +70,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DF7A21801F1326DA00A59F69 /* WBLanguage */ = {
+		DF7A21801F1326DA00A59F69 /* WBLanguageDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DF7A21931F13270600A59F69 /* Source */,
 				DF7A21811F1326DA00A59F69 /* AppDelegate.swift */,
 				DF7A21831F1326DA00A59F69 /* ViewController.swift */,
 				DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */,
@@ -82,7 +82,7 @@
 				DF7A218A1F1326DA00A59F69 /* LaunchScreen.storyboard */,
 				DF7A218D1F1326DA00A59F69 /* Info.plist */,
 			);
-			path = WBLanguage;
+			path = WBLanguageDemo;
 			sourceTree = "<group>";
 		};
 		DF7A21931F13270600A59F69 /* Source */ = {
