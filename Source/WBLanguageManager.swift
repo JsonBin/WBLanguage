@@ -81,8 +81,8 @@ public class WBLanguageManager: NSObject {
         guard var dics = dicts.first else { return nil }
         var key: String?
         dics.keys.forEach { if $0 is String { key = $0 as? String } }
-        guard let k = key, let text = textForKey(k) else { return nil }
-        guard let attrs = dics.removeValue(forKey: k) as? [NSAttributedStringKey: Any] else { return NSAttributedString(string: text) }
+        guard let k = key, let value = dics[k] as? String, let text = textForKey(value) else { return nil }
+        let attrs = dics.filter { $0.key is NSAttributedStringKey } as? [NSAttributedStringKey: Any]
         return NSAttributedString(string: text, attributes: attrs)
     }
     
