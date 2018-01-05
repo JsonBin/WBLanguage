@@ -18,6 +18,8 @@ public enum LanguageType {
     case it  // Italian
     case de  // German
     case ru  // Russian
+    case zh_Hans  // 简体中文
+    case zh_Hant  // 繁体中文
     
     public var rawValue: String {
         switch self {
@@ -26,16 +28,20 @@ public enum LanguageType {
         case .it: return "it"
         case .de: return "de"
         case .ru: return "ru"
+        case .zh_Hans: return "zh-Hans"
+        case .zh_Hant: return "zh-Hant"
         }
     }
     
-    public init?(rawValue: String) {
+    public init(rawValue: String) {
         switch rawValue {
         case "en": self = .en
         case "fr": self = .fr
         case "it": self = .it
         case "de": self = .de
         case "ru": self = .ru
+        case "zh-Hans": self = .zh_Hans
+        case "zh-Hant": self = .zh_Hant
         default: self = .en   // default is english.
         }
     }
@@ -47,11 +53,14 @@ public class WBLanguageManager: NSObject {
     
     open static let shared = WBLanguageManager()
     
-    // Change Text Duration
+    /// Change Text Duration
     open static var duration: CFTimeInterval = 0.25
     
-    // Current Language Type. Default is English.
-    open private(set) static var type = WBLanguageManager.shared.queryLanguageType()
+    /// Current Language Type. Default is English.
+    open private(set) static var type = WBLanguageManager.shared.queryLanguageType
+    
+    // Current Language Type Key
+    private let WBlanguageTypeKey = "wblanguage.current.type"
     
     /// Change System Language Type
     ///
@@ -100,7 +109,7 @@ public class WBLanguageManager: NSObject {
     // MARK: - Private
     
     private static var bundlePath: Bundle? {
-        guard let path = Bundle(for: WBLanguageManager.self).path(forResource: "Language", ofType: "bundle") else {
+        guard let path = Bundle.main.path(forResource: "Language", ofType: "bundle") else {
             return nil
         }
         guard let bundle = Bundle(path: path) else {
@@ -112,14 +121,27 @@ public class WBLanguageManager: NSObject {
     // MARK: - Save To Plist & Query From Plist
     
     private func saveLanguageType(_ type: LanguageType) -> Void {
-        UserDefaults.standard.set(type.rawValue, forKey: "WBCurrentLanguageType")
+        UserDefaults.standard.set(type.rawValue, forKey: WBlanguageTypeKey)
         UserDefaults.standard.synchronize()
     }
     
-    private func queryLanguageType() -> LanguageType {
-        guard let typeString = UserDefaults.standard.value(forKey: "WBCurrentLanguageType") as? String else {
+    private var queryLanguageType: LanguageType {
+        if let typeString = UserDefaults.standard.value(forKey: WBlanguageTypeKey) as? String {
+            return LanguageType(rawValue: typeString)
+        }
+        // Get the iPhone local language, if not exist. The default is english.
+        guard let language = Locale.preferredLanguages.first else {
             return .en
         }
-        return LanguageType(rawValue: typeString)!
+        if language.hasPrefix("en") {
+            return .en
+        }else if language.hasPrefix("zh") {
+            if language.range(of: "Hans") != nil {
+                return .zh_Hans  // 简体中文
+            }else{  // zh-Hant/zh-HK/zh-TW
+                return .zh_Hant  // 繁体中文
+            }
+        }
+        return .en
     }
 }
