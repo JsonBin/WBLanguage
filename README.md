@@ -7,6 +7,8 @@ WBLanguage
 [![Platform info](https://img.shields.io/cocoapods/p/WBLanguage.svg?style=flat)](http://cocoadocs.org/docsets/WBLanguage)
 [![Build Status](https://api.travis-ci.org/JsonBin/WBLanguage.svg?branch=master)](https://travis-ci.org/JsonBin/WBLanguage)
 
+![gif](https://github.com/JsonBin/WBLanguage/raw/master/WBLanguage/demo.gif "demogif")
+
 ## What
 
 WBLanguage is a high level LanguageKit. It provides a High Level API set international language for your app.
