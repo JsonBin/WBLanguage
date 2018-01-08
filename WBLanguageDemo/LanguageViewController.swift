@@ -32,8 +32,8 @@ class LanguageViewController: UIViewController {
             selectIndex = IndexPath(row: 3, section: 0)
         case .de:
             selectIndex = IndexPath(row: 4, section: 0)
+        default: selectIndex = IndexPath(row: 0, section: 0)
         }
-        
         let tableview = UITableView(frame: view.bounds, style: .plain)
         tableview.backgroundColor = .white
         tableview.delegate = self

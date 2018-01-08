@@ -22,7 +22,11 @@ class ViewController: UIViewController {
         label.textColor = .white
         label.backgroundColor = .black
         label.lt.picker = "Label"
-//        label.lt.setPicker("Label")
+        label.lt.attributedPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+        if let text = WBLanguageManager.textForKey("Label") {
+            let att = NSAttributedString(string: text, attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor: UIColor.black])
+            label.attributedText = att
+        }
         view.addSubview(label)
         
         //// Button
@@ -30,6 +34,7 @@ class ViewController: UIViewController {
         button.frame = CGRect(x: 0, y: 200, width: view.bounds.size.width, height: 30)
         button.backgroundColor = .orange
         view.addSubview(button)
+        button.lt.setPicker("Button", forState: .normal)
         let picker = WBLanguageDictionaryPicker(dicts: ["picker": "Button", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedStringKey.strikethroughStyle:NSUnderlineStyle.styleDouble.rawValue])
         button.lt.setAttributedPicker(picker, forState: .normal)
         
@@ -44,6 +49,11 @@ class ViewController: UIViewController {
         segment.lt.setPicker("German", forSegmentAt: 4)
         segment.frame = CGRect(x: 0, y: 300, width: view.bounds.size.width, height: 30)
         view.addSubview(segment)
+        
+        //// UITextField
+        let textfield = UITextField()
+        textfield.lt.placeHolderPicker = "Label"
+        textfield.lt.attributedPlaceHolderPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
         
         //// UIBarButtonItem
         let right = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(rightClick))
