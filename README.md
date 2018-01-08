@@ -176,4 +176,4 @@ segment.lt.setPicker("German", forSegmentAt: 4)
 
 ## License
 
-WBAlamofire is available under the MIT license. See the LICENSE file for more info.
+WBLanguage is available under the [MIT License](https://raw.github.com/rs/SDWebImage/master/LICENSE). See the LICENSE file for more info.
