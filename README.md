@@ -28,6 +28,8 @@ To use WBLanguage add the following to your Podfile
     
 ## Requirements
 
+- Swift 4.0+
+
 | WBLanguage Version | Minimum iOS Target | Note |
 |:------------------:|:-------------------:|:-----|
 | 1.x | iOS 8 | Xcode 7+ is required. |
