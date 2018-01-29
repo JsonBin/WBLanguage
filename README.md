@@ -1,11 +1,10 @@
 WBLanguage
 ==========
 
-![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
-![Pod version](https://img.shields.io/cocoapods/v/WBLanguage.svg?style=flat)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform info](https://img.shields.io/cocoapods/p/WBLanguage.svg?style=flat)](http://cocoadocs.org/docsets/WBLanguage)
 [![Build Status](https://api.travis-ci.org/JsonBin/WBLanguage.svg?branch=master)](https://travis-ci.org/JsonBin/WBLanguage)
+![Pod version](https://img.shields.io/cocoapods/v/WBLanguage.svg?style=flat)
+<!-- [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) -->
+[![Platform info](https://img.shields.io/cocoapods/p/WBLanguage.svg?style=flat)](http://cocoadocs.org/docsets/WBLanguage)
 
 ![gif](https://github.com/JsonBin/WBLanguage/blob/master/demo.gif "demogif")
 
