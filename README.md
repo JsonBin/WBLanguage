@@ -3,7 +3,7 @@ WBLanguage
 
 [![Build Status](https://api.travis-ci.org/JsonBin/WBLanguage.svg?branch=master)](https://travis-ci.org/JsonBin/WBLanguage)
 ![Pod version](https://img.shields.io/cocoapods/v/WBLanguage.svg?style=flat)
-<!-- [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) -->
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform info](https://img.shields.io/cocoapods/p/WBLanguage.svg?style=flat)](http://cocoadocs.org/docsets/WBLanguage)
 
 ![gif](https://github.com/JsonBin/WBLanguage/blob/master/demo.gif "demogif")
@@ -20,18 +20,69 @@ WBLanguage is a high level LanguageKit. It provides a High Level API set interna
 * Subsequent can add more national languages
 
 ## Installation
+WBLanguage supports multiple methods for installing the library in a project.
 
-To use WBLanguage add the following to your Podfile
+## CocoaPods
 
-    pod 'WBLanguage'
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like WBAlamofire in your projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 1.2.0+ is required to build WBLanguage.
+
+#### Podfile
+
+To integrate WBLanguage into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+target 'TargetName' do
+use_frameworks!
+
+pod 'WBLanguage'
+
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## Carthage
+
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate WBLanguage into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "JsonBin/WBLanguage"
+```
+
+Run `carthage` to build the framework and drag the built `WBLanguage.framework` into your Xcode project.
     
 ## Requirements
 
+- iOS 8+
+- Xcode 9.0+
 - Swift 4.0+
 
 | WBLanguage Version | Minimum iOS Target | Note |
 |:------------------:|:-------------------:|:-----|
-| 1.x | iOS 8 | Xcode 7+ is required. |
+| 1.x | iOS 8 | Xcode 9+ is required. |
 
 you must create a 'Language.bundle' resources in your project to hold the international language.
 
