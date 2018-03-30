@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         label.textColor = .white
         label.backgroundColor = .black
         label.lt.picker = "Label"
-        label.lt.attributedPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+        label.lt.attributedPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
         if let text = WBLanguageManager.textForKey("Label") {
-            let att = NSAttributedString(string: text, attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor: UIColor.black])
+            let att = NSAttributedString(string: text, attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor: UIColor.white])
             label.attributedText = att
         }
         view.addSubview(label)
@@ -59,10 +59,44 @@ class ViewController: UIViewController {
         let right = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(rightClick))
         right.lt.setPicker("Change")
         navigationItem.rightBarButtonItem = right
+
+        // 动态监测输入字符
+        let textField = UITextField()
+        textField.frame = CGRect(x: 100, y: 500, width: view.bounds.size.width - 200, height: 40)
+        textField.borderStyle = .roundedRect
+        textField.keyboardType = .default
+        textField.textColor = .red
+        textField.returnKeyType = .done
+        textField.clearButtonMode = .whileEditing
+        textField.font = UIFont.systemFont(ofSize: 17)
+        textField.placeholder = "请输入文字"
+        let text = "//"
+        textField.slack.make(key: text, handler: { (make) in
+            make.push(string: "remove")
+        }, complete: { (text) in
+            print("输入完成: \(text ?? "")")
+        }, delegate: nil)
+//        textField.slack.make(key: text, delegate: self)
+        view.addSubview(textField)
     }
     
     @objc private func rightClick() {
         navigationController?.pushViewController(LanguageViewController(), animated: true)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+}
+
+extension ViewController: YNSlackResponseProtocol {
+    func ynSlackInputingWithMaker(_ maker: YNSlackMaker, slack key: String) {
+        maker.push(string: "remove")
+    }
+
+    func ynSlackEndInput(end text: String?, slack key: String) {
+        print("输入完成: \(text ?? ""), key: \(key)")
     }
 }
 

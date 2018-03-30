@@ -38,13 +38,19 @@ public extension NSObject {
         if let statePicker = picker as? WBLanguageStatePicker {
             let setState = unsafeBitCast(method, to: setValueForStateIMP.self)
             statePicker.values.forEach {
-                setState(self, sele, $1.value()!, UIControlState(rawValue: $0))
+                guard let value = $1.value() else {
+                    fatalError("you not set the localizable string for \($0) with \(self)")
+                }
+                setState(self, sele, value, UIControlState(rawValue: $0))
             }
         }
         else if let intPicker = picker as? WBLanguageIntPicker {
             let setInt = unsafeBitCast(method, to: setValueForIndexIMP.self)
             intPicker.values.forEach {
-                setInt(self, sele, $1.value()!, $0)
+                guard let value = $1.value() else {
+                    fatalError("you not set the localizable string for \($0) with \(self)")
+                }
+                setInt(self, sele, value, $0)
             }
         }
         else if picker is WBLanguageTextPicker {

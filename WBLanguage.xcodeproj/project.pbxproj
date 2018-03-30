@@ -27,6 +27,11 @@
 		DF9FF1CA20258FC100A1548B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9FF19520256D8C00A1548B /* UIKit.framework */; };
 		DF9FF1CC202591B800A1548B /* WBLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = DF9FF1CB2025919900A1548B /* WBLanguage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFD1228A1F9DE8C60081B251 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFD122891F9DE8C50081B251 /* Info.plist */; };
+		DFFFAFE5206E40B30055325E /* YNSlack+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFAFE0206E40B30055325E /* YNSlack+UIKit.swift */; };
+		DFFFAFE6206E40B30055325E /* YNSlackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFAFE1206E40B30055325E /* YNSlackProtocol.swift */; };
+		DFFFAFE7206E40B30055325E /* YNSlackMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFAFE2206E40B30055325E /* YNSlackMaker.swift */; };
+		DFFFAFE8206E40B30055325E /* YNSlackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFAFE3206E40B30055325E /* YNSlackManager.swift */; };
+		DFFFAFE9206E40B30055325E /* YNSlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFFAFE4206E40B30055325E /* YNSlack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +41,6 @@
 		DF42D4101F13714000B2B121 /* WBLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguage.swift; sourceTree = "<group>"; };
 		DF42D41A1F13778600B2B121 /* Language.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Language.bundle; sourceTree = "<group>"; };
 		DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
-		DF42D41F1F1382F000B2B121 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		DF7A217E1F1326DA00A59F69 /* WBLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A21811F1326DA00A59F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7A21831F1326DA00A59F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,11 @@
 		DF9FF1B720258F4300A1548B /* WBLanguage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WBLanguage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9FF1CB2025919900A1548B /* WBLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBLanguage.h; sourceTree = "<group>"; };
 		DFD122891F9DE8C50081B251 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFFFAFE0206E40B30055325E /* YNSlack+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YNSlack+UIKit.swift"; sourceTree = "<group>"; };
+		DFFFAFE1206E40B30055325E /* YNSlackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSlackProtocol.swift; sourceTree = "<group>"; };
+		DFFFAFE2206E40B30055325E /* YNSlackMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSlackMaker.swift; sourceTree = "<group>"; };
+		DFFFAFE3206E40B30055325E /* YNSlackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSlackManager.swift; sourceTree = "<group>"; };
+		DFFFAFE4206E40B30055325E /* YNSlack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNSlack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +101,7 @@
 		DF7A21801F1326DA00A59F69 /* WBLanguageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DFFFAFDF206E40B30055325E /* Slack */,
 				DF7A21811F1326DA00A59F69 /* AppDelegate.swift */,
 				DF7A21831F1326DA00A59F69 /* ViewController.swift */,
 				DF42D41C1F137D2700B2B121 /* LanguageViewController.swift */,
@@ -132,6 +142,18 @@
 				DFD122891F9DE8C50081B251 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		DFFFAFDF206E40B30055325E /* Slack */ = {
+			isa = PBXGroup;
+			children = (
+				DFFFAFE0206E40B30055325E /* YNSlack+UIKit.swift */,
+				DFFFAFE1206E40B30055325E /* YNSlackProtocol.swift */,
+				DFFFAFE2206E40B30055325E /* YNSlackMaker.swift */,
+				DFFFAFE3206E40B30055325E /* YNSlackManager.swift */,
+				DFFFAFE4206E40B30055325E /* YNSlack.swift */,
+			);
+			path = Slack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +274,16 @@
 				DF42D40B1F1363A500B2B121 /* WBLanguagePicker.swift in Sources */,
 				DF42D4111F13714000B2B121 /* WBLanguage.swift in Sources */,
 				DF42D41D1F137D2700B2B121 /* LanguageViewController.swift in Sources */,
+				DFFFAFE8206E40B30055325E /* YNSlackManager.swift in Sources */,
 				DF42D40D1F13679E00B2B121 /* WBLanguageExtension.swift in Sources */,
+				DFFFAFE7206E40B30055325E /* YNSlackMaker.swift in Sources */,
 				DF7A21841F1326DA00A59F69 /* ViewController.swift in Sources */,
 				DF42D40F1F136D4300B2B121 /* WBLanguage+UIKit.swift in Sources */,
+				DFFFAFE5206E40B30055325E /* YNSlack+UIKit.swift in Sources */,
 				DF7A21821F1326DA00A59F69 /* AppDelegate.swift in Sources */,
 				DF7A21951F1327AB00A59F69 /* WBLanguageManager.swift in Sources */,
+				DFFFAFE6206E40B30055325E /* YNSlackProtocol.swift in Sources */,
+				DFFFAFE9206E40B30055325E /* YNSlack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +306,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				DF7A21861F1326DA00A59F69 /* Base */,
-				DF42D41F1F1382F000B2B121 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

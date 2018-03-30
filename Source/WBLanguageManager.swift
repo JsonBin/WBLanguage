@@ -75,7 +75,11 @@ public class WBLanguageManager: NSObject {
     
     open class func textForKey(_ key: String, value place: String? = nil) -> String? {
         guard let path = bundlePath?.path(forResource: type.rawValue, ofType: "lproj") else {
-            return place
+            #if DEBUG
+                fatalError("you must add \(type.rawValue).lproj in Language.bundle file.")
+            #else
+                return place
+            #endif
         }
         guard let bundle = Bundle(path: path) else{
             return place
