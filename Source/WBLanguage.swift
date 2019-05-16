@@ -28,7 +28,7 @@ public protocol WBLanguageProtocol {
     var lt: LanguageValue { get }
 }
 
-public extension WBLanguageProtocol {
+extension WBLanguageProtocol {
     public var lt: WBLanguage<Self> {
         return WBLanguage(self)
     }

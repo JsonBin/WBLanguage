@@ -9,7 +9,6 @@
 import UIKit
 
 // MARK: - Enum Language Types
-
 public enum LanguageType {
     case en  // English
     case fr  // French
@@ -49,7 +48,6 @@ public enum LanguageType {
 }
 
 // MARK: - Language Manager
-
 public class WBLanguageManager: NSObject {
     
     public static let shared = WBLanguageManager()
@@ -66,7 +64,7 @@ public class WBLanguageManager: NSObject {
     /// Change System Language Type
     ///
     /// - Parameter type: Support Language Type
-    open class func setLanguage(_ type: LanguageType) -> Void {
+    public class func setLanguage(_ type: LanguageType) -> Void {
         self.type = type
         WBLanguageManager.shared.saveLanguageType(type)
         NotificationCenter.default.post(name: .languageWillUpdate, object: nil)
@@ -74,7 +72,7 @@ public class WBLanguageManager: NSObject {
     
     // MARK: - Get Text For Key
     
-    open class func textForKey(_ key: String, value place: String? = nil) -> String? {
+    public class func textForKey(_ key: String, value place: String? = nil) -> String? {
         guard let path = bundlePath?.path(forResource: type.rawValue, ofType: "lproj") else {
             #if DEBUG
                 fatalError("you must add \(type.rawValue).lproj in Language.bundle file.")
@@ -91,10 +89,14 @@ public class WBLanguageManager: NSObject {
     
     /// Get AttributedString From Localizable strings. 
     /// The dic must contains ["picker": String...]
-    open class func attributedStringForDict(_ dicts: [[AnyHashable: Any]]) -> NSAttributedString? {
+    public class func attributedStringForDict(_ dicts: [[AnyHashable: Any]]) -> NSAttributedString? {
         guard var dics = dicts.first else { return nil }
         var key: String?
+        #if swift(>=5.0)
+        dics.keys.forEach { if $0.base is String { key = $0.base as? String } }
+        #else
         dics.keys.forEach { if $0 is String { key = $0 as? String } }
+        #endif
         guard let k = key, let value = dics[k] as? String, let text = textForKey(value) else { return nil }
         #if swift(>=4.2)
         let attrs = dics.filter { $0.key is NSAttributedString.Key } as? [NSAttributedString.Key: Any]
@@ -105,7 +107,7 @@ public class WBLanguageManager: NSObject {
     }
     
     /// Texts From Localizable strings
-    open class func textsForArray(_ strings: [String]) -> [String]? {
+    public class func textsForArray(_ strings: [String]) -> [String]? {
         var texts = [String]()
         strings.forEach {
             if let text = textForKey($0) {
@@ -156,7 +158,7 @@ public class WBLanguageManager: NSObject {
 }
 
 // MARK: - Notification
-public extension Notification.Name {
+extension Notification.Name {
     /// It would used in before change the language type.
     public static let languageWillUpdate = Notification.Name("WBLanguageWillUpdateNotification")
 
@@ -164,5 +166,5 @@ public extension Notification.Name {
     public static let languageDidUpdate = Notification.Name("WBLanguageDidUpdateNotification")
 }
 
-@available(*, deprecated: 1.2.0, message: "use .languageChanged insted")
+@available(*, unavailable, message: "use .languageChanged insted")
 public let LanguageNotification = Notification.Name.languageWillUpdate.rawValue

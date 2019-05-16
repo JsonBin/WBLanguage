@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - UILabel
-public extension WBLanguage where T : UILabel {
+extension WBLanguage where T : UILabel {
     public func setPicker(_ picker: WBLanguageTextPicker?) {
         setLanguagePicker(value, Selector: "setText:", Picker: picker)
     }
@@ -25,8 +25,9 @@ public extension WBLanguage where T : UILabel {
         get{ return getLanguagePicker(value, Selector: "setAttributedText:") as? WBLanguageDictionaryPicker }
     }
 }
+
 // MARK: - UITextField
-public extension WBLanguage where T : UITextField {
+extension WBLanguage where T : UITextField {
     public func setPicker(_ picker: WBLanguageTextPicker?) {
         setLanguagePicker(value, Selector: "setText:", Picker: picker)
     }
@@ -56,8 +57,9 @@ public extension WBLanguage where T : UITextField {
         get { return getLanguagePicker(value, Selector: "setAttributedPlaceholder:") as? WBLanguageDictionaryPicker }
     }
 }
+
 // MARK: - UITextView
-public extension WBLanguage where T : UITextView {
+extension WBLanguage where T : UITextView {
     public func setPicker(_ picker: WBLanguageTextPicker?) {
         setLanguagePicker(value, Selector: "setText:", Picker: picker)
     }
@@ -73,15 +75,17 @@ public extension WBLanguage where T : UITextView {
         get{ return getLanguagePicker(value, Selector: "setAttributedText:") as? WBLanguageDictionaryPicker }
     }
 }
+
 // MARK: - UISegmentedControl
-public extension WBLanguage where T : UISegmentedControl {
+extension WBLanguage where T : UISegmentedControl {
     public func setPicker(_ picker: WBLanguageTextPicker?, forSegmentAt segment: Int) {
         let intPicker = setIntPicker(value, Selector: "setTitle:forSegmentAtIndex:", Picker: picker, Index: segment)
         setLanguagePicker(value, Selector: "setTitle:forSegmentAtIndex:", Picker: intPicker)
     }
 }
+
 // MARK: - UIButton
-public extension WBLanguage where T : UIButton {
+extension WBLanguage where T : UIButton {
     public func setPicker(_ picker: WBLanguageTextPicker?, forState state: WBLanguageControlState) {
         let statePicker = setStatePicker(value, Selector: "setTitle:forState:", Picker: picker, State: state)
         setLanguagePicker(value, Selector: "setTitle:forState:", Picker: statePicker)
@@ -91,8 +95,9 @@ public extension WBLanguage where T : UIButton {
         setLanguagePicker(value, Selector: "setAttributedTitle:forState:", Picker: statePicker)
     }
 }
+
 // MARK: - UIBarButtonItem
-public extension WBLanguage where T : UIBarButtonItem {
+extension WBLanguage where T : UIBarButtonItem {
     public func setPicker(_ picker: WBLanguageTextPicker?) {
         setLanguagePicker(value, Selector: "setTitle:", Picker: picker)
     }
@@ -101,8 +106,9 @@ public extension WBLanguage where T : UIBarButtonItem {
         get{ return getLanguagePicker(value, Selector: "setTitle:") as? WBLanguageTextPicker }
     }
 }
+
 // MARK: - UIViewController
-public extension WBLanguage where T : UIViewController {
+extension WBLanguage where T : UIViewController {
     public func setPicker(_ picker: WBLanguageTextPicker?) {
         setLanguagePicker(value, Selector: "setTitle:", Picker: picker)
     }
@@ -113,7 +119,6 @@ public extension WBLanguage where T : UIViewController {
 }
 
 // MARK: - Private
-
 private func setLanguagePicker(
     _ object: NSObject,
     Selector selector: String,

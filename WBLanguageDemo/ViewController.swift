@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        lt.setPicker("Title")
+
+        lt.picker = "Title"
         
         /// Label
         let label = UILabel()

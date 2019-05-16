@@ -10,7 +10,7 @@ import UIKit
 
 private var WBLanguageTypeKeys = ""
 
-public extension NSObject {
+extension NSObject {
     
     public typealias LanguagePickers = [String: WBLanguagePicker]
     
@@ -71,7 +71,6 @@ public extension NSObject {
 }
 
 // MARK: - Extension NSObject Notification
-
 public extension NSObject {
     
     /// Remove Notification

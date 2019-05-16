@@ -9,29 +9,26 @@
 import UIKit
 
 // MARK: - Base Picker
-
-open class WBLanguagePicker: NSObject, NSCopying {
+public class WBLanguagePicker: NSObject, NSCopying {
 
     public typealias PickerType = () -> Any?
+
+    public let value: PickerType
     
-    public var value: PickerType
-    
-    required public init(_ value: @escaping PickerType) {
-        self.value = value
+    required public init(ve: @escaping PickerType) {
+        self.value = ve
     }
     
-    open func copy(with zone: NSZone? = nil) -> Any {
-        return type(of: self).init(value)
+    public func copy(with zone: NSZone?) -> Any {
+        return type(of: self).init(ve: value)
     }
-    
 }
 
 // MARK: - Text Picker
-
-open class WBLanguageTextPicker: WBLanguagePicker, ExpressibleByStringLiteral {
+public final class WBLanguageTextPicker: WBLanguagePicker, ExpressibleByStringLiteral {
     
     public convenience init(keyPath: String) {
-        self.init({ return WBLanguageManager.textForKey(keyPath) })
+        self.init(ve: { return WBLanguageManager.textForKey(keyPath) })
     }
     
     public required convenience init(stringLiteral value: String) {
@@ -46,63 +43,61 @@ open class WBLanguageTextPicker: WBLanguagePicker, ExpressibleByStringLiteral {
         self.init(keyPath: value)
     }
     
-    open class func pickerForKeyPath(_ keyPath: String) -> WBLanguageTextPicker {
+    public class func pickerForKeyPath(_ keyPath: String) -> WBLanguageTextPicker {
         return WBLanguageTextPicker(keyPath: keyPath)
     }
 }
 
 // MARK: - Dictionary Picker
 /// NSAttributedString Picker. The dicts must contains ["picker": String...]
-open class WBLanguageDictionaryPicker: WBLanguagePicker, ExpressibleByArrayLiteral {
+public final class WBLanguageDictionaryPicker: WBLanguagePicker, ExpressibleByArrayLiteral {
 
     public convenience init(dicts: [AnyHashable: Any]...) {
-        self.init ({ return WBLanguageManager.attributedStringForDict(dicts) })
+        self.init(ve: { return WBLanguageManager.attributedStringForDict(dicts) })
     }
     
     public required convenience init(arrayLiteral elements: [AnyHashable: Any]...) {
-        self.init({ return WBLanguageManager.attributedStringForDict(elements) })
+        self.init(ve: { return WBLanguageManager.attributedStringForDict(elements) })
     }
     
-    open class func pickerWithDicts(_ dicts: [[AnyHashable: Any]]) -> WBLanguageDictionaryPicker {
-        return WBLanguageDictionaryPicker( { return WBLanguageManager.attributedStringForDict(dicts) })
+    public class func pickerWithDicts(_ dicts: [[AnyHashable: Any]]) -> WBLanguageDictionaryPicker {
+        return WBLanguageDictionaryPicker(ve: { return WBLanguageManager.attributedStringForDict(dicts) })
     }
 }
 
 // MARK: - State Picker
-
-open class WBLanguageStatePicker: WBLanguagePicker {
+public final class WBLanguageStatePicker: WBLanguagePicker {
     
     public typealias ValuesType = [UInt : WBLanguagePicker]
     
-    open var values = ValuesType()
+    public var values = ValuesType()
     
     public convenience init?(_ picker: WBLanguagePicker?, forState state: WBLanguageControlState) {
         guard let picker = picker else { return nil }
-        self.init( { return 0 })
+        self.init(ve: { return state.rawValue })
         values[state.rawValue] = picker
     }
 
-    open func setPicker(_ picker: WBLanguagePicker?, forState state: WBLanguageControlState) -> Self {
+    public func setPicker(_ picker: WBLanguagePicker?, forState state: WBLanguageControlState) -> Self {
         values[state.rawValue] = picker
         return self
     }
 }
 
 // MARK: - Int Picker
-
-open class WBLanguageIntPicker: WBLanguagePicker {
+public final class WBLanguageIntPicker: WBLanguagePicker {
     
     public typealias IndexType = [Int: WBLanguagePicker]
     
-    open var values = IndexType()
+    public var values = IndexType()
     
     public convenience init?(_ picker: WBLanguagePicker?, forIndex index: Int) {
         guard let picker = picker else { return nil }
-        self.init( { return 0 })
+        self.init(ve: { return index })
         values[index] = picker
     }
     
-    open func setPicker(_ picker: WBLanguagePicker?, forIndex index: Int) -> Self {
+    public func setPicker(_ picker: WBLanguagePicker?, forIndex index: Int) -> Self {
         values[index] = picker
         return self
     }

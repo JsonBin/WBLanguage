@@ -15,9 +15,9 @@ class LanguageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        lt.setPicker("Language")
-        
+
+        lt.picker = "Language"
+
         navigationController?.navigationBar.isTranslucent = false
         automaticallyAdjustsScrollViewInsets = false
         
@@ -41,7 +41,7 @@ class LanguageViewController: UIViewController {
         tableview.tableFooterView = UIView()
         tableview.rowHeight = 50
         view.addSubview(tableview)
-        
+
         let right = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(rightClick))
         right.lt.setPicker("Button")
         navigationItem.rightBarButtonItem = right
