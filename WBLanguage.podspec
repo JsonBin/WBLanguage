@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'WBLanguage'
-  s.version      = '1.2.1'
+  s.version      = '2.0.0'
   s.license      = 'MIT' 
   s.summary      = 'In your project, you can easy to change the language with swift.'
   s.homepage     = 'https://github.com/JsonBin/WBLanguage'
