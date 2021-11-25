@@ -16,10 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        WBLanguageManager.shared.startup()
+        
+        if WBLanguageManager.shared.hasDifferenceLanguage {
+            let type = WBLanguageManager.shared.type.rawValue
+            // put type to server...
+            
+            // API.post(url, type: type)
+        }
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
         
         return true

@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         label.textColor = .white
         label.backgroundColor = .black
         label.lt.picker = "Label"
-        label.lt.attributedPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", WBLanguageStringKey.foregroundColor: UIColor.white, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
-        if let text = WBLanguageManager.textForKey("Label") {
+        label.lt.attributedPicker = WBLanguageDictionaryPicker(["picker": "Label", WBLanguageStringKey.foregroundColor: UIColor.white, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+        if let text = WBLanguageManager.shared.localizedString("Label") {
             let att = NSAttributedString(string: text, attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor: UIColor.white])
             label.attributedText = att
         }
@@ -36,9 +36,9 @@ class ViewController: UIViewController {
         view.addSubview(button)
         button.lt.setPicker("Button", forState: .normal)
         #if swift(>=4.2)
-        let picker = WBLanguageDictionaryPicker(dicts: ["picker": "Button", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17), WBLanguageStringKey.strikethroughStyle: NSUnderlineStyle.double.rawValue])
+        let picker = WBLanguageDictionaryPicker(["picker": "Button", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17), WBLanguageStringKey.strikethroughStyle: NSUnderlineStyle.double.rawValue])
         #else
-        let picker = WBLanguageDictionaryPicker(dicts: ["picker": "Button", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17), WBLanguageStringKey.strikethroughStyle: NSUnderlineStyle.styleDouble.rawValue])
+        let picker = WBLanguageDictionaryPicker(["picker": "Button", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17), WBLanguageStringKey.strikethroughStyle: NSUnderlineStyle.styleDouble.rawValue])
         #endif
         button.lt.setAttributedPicker(picker, forState: .normal)
         
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         //// UITextField
         let textfield = UITextField()
         textfield.lt.placeHolderPicker = "Label"
-        textfield.lt.attributedPlaceHolderPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+        textfield.lt.attributedPlaceHolderPicker = WBLanguageDictionaryPicker(["picker": "Label", WBLanguageStringKey.foregroundColor: UIColor.black, WBLanguageStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
 
         //// UIBarButtonItem
         let right = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(rightClick))

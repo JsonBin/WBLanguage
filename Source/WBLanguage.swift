@@ -16,8 +16,9 @@ import UIKit
     public typealias WBLanguageStringKey = NSAttributedStringKey
 #endif
 
-public final class WBLanguage<T>{
+public final class WBLanguage<T> {
     public let value: T
+    
     public init(_ value: T) {
         self.value = value
     }
@@ -34,16 +35,10 @@ extension WBLanguageProtocol {
     }
 }
 
-extension UILabel : WBLanguageProtocol {}
-
-extension UITextField : WBLanguageProtocol {}
-
-extension UITextView : WBLanguageProtocol {}
-
-extension UISegmentedControl : WBLanguageProtocol {}
-
-extension UIButton : WBLanguageProtocol {}
-
-extension UIBarButtonItem : WBLanguageProtocol {}
-
-extension UIViewController : WBLanguageProtocol {}
+extension UILabel: WBLanguageProtocol {}
+extension UIButton: WBLanguageProtocol {}
+extension UITextView: WBLanguageProtocol {}
+extension UITextField: WBLanguageProtocol {}
+extension UIBarButtonItem: WBLanguageProtocol {}
+extension UIViewController: WBLanguageProtocol {}
+extension UISegmentedControl: WBLanguageProtocol {}

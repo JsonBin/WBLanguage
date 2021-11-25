@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF05E44F274F735D00693F4E /* WBLanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05E44E274F735D00693F4E /* WBLanguageType.swift */; };
+		DF05E450274F735D00693F4E /* WBLanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05E44E274F735D00693F4E /* WBLanguageType.swift */; };
+		DF05E452274F7DA900693F4E /* WBLanguagePicker+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05E451274F7DA900693F4E /* WBLanguagePicker+NSObject.swift */; };
+		DF05E453274F7DA900693F4E /* WBLanguagePicker+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05E451274F7DA900693F4E /* WBLanguagePicker+NSObject.swift */; };
 		DF42D40B1F1363A500B2B121 /* WBLanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */; };
-		DF42D40D1F13679E00B2B121 /* WBLanguageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */; };
 		DF42D40F1F136D4300B2B121 /* WBLanguage+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */; };
 		DF42D4111F13714000B2B121 /* WBLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D4101F13714000B2B121 /* WBLanguage.swift */; };
 		DF42D41B1F13778600B2B121 /* Language.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF42D41A1F13778600B2B121 /* Language.bundle */; };
@@ -21,7 +24,6 @@
 		DF7A21951F1327AB00A59F69 /* WBLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */; };
 		DF9FF1C420258F6100A1548B /* WBLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */; };
 		DF9FF1C520258F6100A1548B /* WBLanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */; };
-		DF9FF1C620258F6100A1548B /* WBLanguageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */; };
 		DF9FF1C720258F6100A1548B /* WBLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D4101F13714000B2B121 /* WBLanguage.swift */; };
 		DF9FF1C820258F6100A1548B /* WBLanguage+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */; };
 		DF9FF1CA20258FC100A1548B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9FF19520256D8C00A1548B /* UIKit.framework */; };
@@ -34,8 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF05E44E274F735D00693F4E /* WBLanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLanguageType.swift; sourceTree = "<group>"; };
+		DF05E451274F7DA900693F4E /* WBLanguagePicker+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBLanguagePicker+NSObject.swift"; sourceTree = "<group>"; };
 		DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguagePicker.swift; sourceTree = "<group>"; };
-		DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguageExtension.swift; sourceTree = "<group>"; };
 		DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBLanguage+UIKit.swift"; sourceTree = "<group>"; };
 		DF42D4101F13714000B2B121 /* WBLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLanguage.swift; sourceTree = "<group>"; };
 		DF42D41A1F13778600B2B121 /* Language.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Language.bundle; sourceTree = "<group>"; };
@@ -116,10 +119,11 @@
 		DF7A21931F13270600A59F69 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DF05E44E274F735D00693F4E /* WBLanguageType.swift */,
 				DF7A21941F1327AB00A59F69 /* WBLanguageManager.swift */,
 				DF42D40A1F1363A500B2B121 /* WBLanguagePicker.swift */,
-				DF42D40C1F13679E00B2B121 /* WBLanguageExtension.swift */,
 				DF42D4101F13714000B2B121 /* WBLanguage.swift */,
+				DF05E451274F7DA900693F4E /* WBLanguagePicker+NSObject.swift */,
 				DF42D40E1F136D4300B2B121 /* WBLanguage+UIKit.swift */,
 				DFD122881F9DE8C50081B251 /* Support Files */,
 			);
@@ -270,11 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF42D40B1F1363A500B2B121 /* WBLanguagePicker.swift in Sources */,
+				DF05E452274F7DA900693F4E /* WBLanguagePicker+NSObject.swift in Sources */,
 				DF42D4111F13714000B2B121 /* WBLanguage.swift in Sources */,
 				DF42D41D1F137D2700B2B121 /* LanguageViewController.swift in Sources */,
 				DFFFAFE8206E40B30055325E /* YNSlackManager.swift in Sources */,
-				DF42D40D1F13679E00B2B121 /* WBLanguageExtension.swift in Sources */,
 				DFFFAFE7206E40B30055325E /* YNSlackMaker.swift in Sources */,
+				DF05E44F274F735D00693F4E /* WBLanguageType.swift in Sources */,
 				DF7A21841F1326DA00A59F69 /* ViewController.swift in Sources */,
 				DF42D40F1F136D4300B2B121 /* WBLanguage+UIKit.swift in Sources */,
 				DFFFAFE5206E40B30055325E /* YNSlack+UIKit.swift in Sources */,
@@ -289,10 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF05E453274F7DA900693F4E /* WBLanguagePicker+NSObject.swift in Sources */,
 				DF9FF1C420258F6100A1548B /* WBLanguageManager.swift in Sources */,
 				DF9FF1C520258F6100A1548B /* WBLanguagePicker.swift in Sources */,
-				DF9FF1C620258F6100A1548B /* WBLanguageExtension.swift in Sources */,
 				DF9FF1C720258F6100A1548B /* WBLanguage.swift in Sources */,
+				DF05E450274F735D00693F4E /* WBLanguageType.swift in Sources */,
 				DF9FF1C820258F6100A1548B /* WBLanguage+UIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +446,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/WBLanguageDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengsu.WBLanguage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -458,6 +465,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/WBLanguageDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hengsu.WBLanguage;
 				PRODUCT_NAME = "$(TARGET_NAME)";

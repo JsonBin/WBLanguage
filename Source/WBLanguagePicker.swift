@@ -11,94 +11,124 @@ import UIKit
 // MARK: - Base Picker
 public class WBLanguagePicker: NSObject, NSCopying {
 
-    public typealias PickerType = () -> Any?
+    public typealias PickerValue = () -> Any?
 
-    public let value: PickerType
+    public let value: PickerValue
     
-    required public init(ve: @escaping PickerType) {
-        self.value = ve
+    public required init(_ value: @escaping PickerValue) {
+        self.value = value
     }
     
     public func copy(with zone: NSZone?) -> Any {
-        return type(of: self).init(ve: value)
+        return type(of: self).init(self.value)
     }
 }
 
 // MARK: - Text Picker
 public final class WBLanguageTextPicker: WBLanguagePicker, ExpressibleByStringLiteral {
     
-    public convenience init(keyPath: String) {
-        self.init(ve: { return WBLanguageManager.textForKey(keyPath) })
+    public convenience init(_ key: String) {
+        self.init {
+            WBLanguageManager.shared.localizedString(key)
+        }
     }
     
     public required convenience init(stringLiteral value: String) {
-        self.init(keyPath: value)
+        self.init(value)
     }
     
     public required convenience init(unicodeScalarLiteral value: String) {
-        self.init(keyPath: value)
+        self.init(value)
     }
     
     public required convenience init(extendedGraphemeClusterLiteral value: String) {
-        self.init(keyPath: value)
+        self.init(value)
     }
     
-    public class func pickerForKeyPath(_ keyPath: String) -> WBLanguageTextPicker {
-        return WBLanguageTextPicker(keyPath: keyPath)
+    public class func pickerForKey(_ key: String) -> Self {
+        return Self(key)
     }
 }
 
 // MARK: - Dictionary Picker
 /// NSAttributedString Picker. The dicts must contains ["picker": String...]
 public final class WBLanguageDictionaryPicker: WBLanguagePicker, ExpressibleByArrayLiteral {
+    
+    public typealias ArrayLiteralElement = [AnyHashable: Any]
 
-    public convenience init(dicts: [AnyHashable: Any]...) {
-        self.init(ve: { return WBLanguageManager.attributedStringForDict(dicts) })
+    public convenience init(_ dicts: ArrayLiteralElement...) {
+        self.init {
+            WBLanguageManager.shared.attributedString(dicts)
+        }
     }
     
-    public required convenience init(arrayLiteral elements: [AnyHashable: Any]...) {
-        self.init(ve: { return WBLanguageManager.attributedStringForDict(elements) })
+    public required convenience init(arrayLiteral elements: ArrayLiteralElement...) {
+        self.init {
+            WBLanguageManager.shared.attributedString(elements)
+        }
     }
     
-    public class func pickerWithDicts(_ dicts: [[AnyHashable: Any]]) -> WBLanguageDictionaryPicker {
-        return WBLanguageDictionaryPicker(ve: { return WBLanguageManager.attributedStringForDict(dicts) })
+    public class func pickerWithDicts(_ dicts: [ArrayLiteralElement]) -> Self {
+        return Self {
+            WBLanguageManager.shared.attributedString(dicts)
+        }
     }
 }
 
 // MARK: - State Picker
-public final class WBLanguageStatePicker: WBLanguagePicker {
+public final class WBLanguageStatePicker: WBLanguagePicker, ExpressibleByDictionaryLiteral {
     
-    public typealias ValuesType = [UInt : WBLanguagePicker]
+    public typealias Key = UInt
+    public typealias Value = WBLanguagePicker
     
-    public var values = ValuesType()
+    var values = [Key: Value]()
     
-    public convenience init?(_ picker: WBLanguagePicker?, forState state: WBLanguageControlState) {
-        guard let picker = picker else { return nil }
-        self.init(ve: { return state.rawValue })
-        values[state.rawValue] = picker
+    public convenience init?(_ picker: Value?, forState state: WBLanguageControlState) {
+        guard let picker = picker else {
+            return nil
+        }
+        self.init { state.rawValue }
+        self.values[state.rawValue] = picker
     }
-
-    public func setPicker(_ picker: WBLanguagePicker?, forState state: WBLanguageControlState) -> Self {
-        values[state.rawValue] = picker
+    
+    public required convenience init(dictionaryLiteral elements: (Key, Value)...) {
+        self.init { elements.count }
+        elements.forEach {
+            self.values[$0.0] = $0.1
+        }
+    }
+    
+    public func setPicker(_ picker: Value?, forState state: WBLanguageControlState) -> Self {
+        self.values[state.rawValue] = picker
         return self
     }
 }
 
 // MARK: - Int Picker
-public final class WBLanguageIntPicker: WBLanguagePicker {
+public final class WBLanguageIntPicker: WBLanguagePicker, ExpressibleByDictionaryLiteral {
     
-    public typealias IndexType = [Int: WBLanguagePicker]
+    public typealias Key = Int
+    public typealias Value = WBLanguagePicker
     
-    public var values = IndexType()
+    var values = [Key: Value]()
     
-    public convenience init?(_ picker: WBLanguagePicker?, forIndex index: Int) {
-        guard let picker = picker else { return nil }
-        self.init(ve: { return index })
-        values[index] = picker
+    public convenience init?(_ picker: Value?, forIndex index: Int) {
+        guard let picker = picker else {
+            return nil
+        }
+        self.init { index }
+        self.values[index] = picker
     }
     
-    public func setPicker(_ picker: WBLanguagePicker?, forIndex index: Int) -> Self {
-        values[index] = picker
+    public required convenience init(dictionaryLiteral elements: (Key, Value)...) {
+        self.init { elements.count }
+        elements.forEach {
+            self.values[$0.0] = $0.1
+        }
+    }
+    
+    public func setPicker(_ picker: Value?, forIndex index: Int) -> Self {
+        self.values[index] = picker
         return self
     }
 }

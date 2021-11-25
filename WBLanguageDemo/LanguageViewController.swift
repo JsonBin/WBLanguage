@@ -21,7 +21,7 @@ class LanguageViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         automaticallyAdjustsScrollViewInsets = false
         
-        switch WBLanguageManager.type {
+        switch WBLanguageManager.shared.type {
         case .en:
             selectIndex = IndexPath(row: 0, section: 0)
         case .ru:
@@ -61,7 +61,7 @@ class LanguageViewController: UIViewController {
         default:
             type = .de
         }
-        WBLanguageManager.setLanguage(type)
+        WBLanguageManager.shared.updateLanguage(type)
     }
 }
 
