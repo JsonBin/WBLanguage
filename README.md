@@ -83,8 +83,10 @@ Run `carthage` to build the framework and drag the built `WBLanguage.framework` 
 | WBLanguage Version | Minimum iOS Target | Note |
 |:------------------:|:-------------------:|:-----|
 | 1.x | iOS 8 | Xcode 9+ is required. |
+| 2.x | iOS 8 | Xcode 9+ is required. |
 
-you must create a 'Language.bundle' resources in your project to hold the international language.
+you can create a `Language.bundle` resources in your project to hold the international language.
+otherwise, it will search from the `main.bundle` resources.
 
 ## Usage
 
@@ -94,21 +96,22 @@ We can set WBLanguageManager's property at the beggining of app launching, the s
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        WBLanguageManager.duration = 2.0
+        WBLanguageManager.shared.startup()
+        WBLanguageManager.shared.duration = 2.0
         return true
     }
 ```
 
-if you want to set a new language, you can use `setLanguage(_:)` to update the UI. And it will automatically save the language of your choice.
+if you want to set a new language, you can use `updateLanguage(_:)` to update the UI. And it will automatically save the language of your choice.
 
 ```swift
-WBLanguageManager.setLanguage(type)
+WBLanguageManager.shared.updateLanguage(type)
 ```
 
-you can use `textForKey(_:, value:)` to get the local text from *.lproj.
+you can use `localizedString(_:, place:)` to get the local text from *.lproj.
 
 ```swift
-let string = WBLanguageManager.textForKey("key")
+let string = WBLanguageManager.shared.localizedString("key")
 ```
 
 ### WBLanguage class
@@ -132,27 +135,44 @@ For example:
 
 private func setLanguagePicker(
     _ object: NSObject,
-    Selector selector: String,
-    Picker picker: WBLanguagePicker?
+    selector: Selector,
+    picker: WBLanguagePicker?
 ) {
-    object.languagePickers[selector] = picker
-    object.performLanguage(selector, Picker: picker)
+    object.pickers[selector] = picker
+    object.performLanguage(selector, picker: picker)
 }
 
-public extension WBLanguage where T : UILabel {
-    public func setPicker(_ picker: WBLanguageTextPicker?) {
-        setLanguagePicker(value, Selector: "setText:", Picker: picker)
-    }
-    public func setAttributedPicker(_ picker: WBLanguageDictionaryPicker?) {
-        setLanguagePicker(value, Selector: "setAttributedText:", Picker: picker)
-    }
+extension WBLanguage where T : UILabel {
     public var picker: WBLanguageTextPicker? {
-        set{ setLanguagePicker(value, Selector: "setText:", Picker: newValue) }
-        get{ return getLanguagePicker(value, Selector: "setText:") as? WBLanguageTextPicker }
+        set {
+            let selector = #selector(setter: T.text)
+            setLanguagePicker(value, selector: selector, picker: newValue)
+        }
+        get {
+            let selector = #selector(setter: T.text)
+            return getLanguagePicker(value, selector: selector) as? WBLanguageTextPicker
+        }
     }
+    
     public var attributedPicker: WBLanguageDictionaryPicker? {
-        set{ setLanguagePicker(value, Selector: "setAttributedText:", Picker: newValue) }
-        get{ return getLanguagePicker(value, Selector: "setAttributedText:") as? WBLanguageDictionaryPicker }
+        set {
+            let selector = #selector(setter: T.attributedText)
+            setLanguagePicker(value, selector: selector, picker: newValue)
+        }
+        get {
+            let selector = #selector(setter: T.attributedText)
+            return getLanguagePicker(value, selector: selector) as? WBLanguageDictionaryPicker
+        }
+    }
+    
+    public func setPicker(_ picker: WBLanguageTextPicker?) {
+        let selector = #selector(setter: T.text)
+        setLanguagePicker(value, selector: selector, picker: picker)
+    }
+    
+    public func setAttributedPicker(_ picker: WBLanguageDictionaryPicker?) {
+        let selector = #selector(setter: T.attributedText)
+        setLanguagePicker(value, selector: selector, picker: picker)
     }
 }
 ```
@@ -167,19 +187,19 @@ label.lt.picker = "Label"
 ```
 `UILabel` can use `*.lt.picker` or `*.lt.setPicker(_:)` to load text.
 
-Of course, if you want to add attributes to the font, you can use `WBLanguageDictionaryPicker` or `WBLanguageManager.textForKey("key")`
+Of course, if you want to add attributes to the font, you can use `WBLanguageDictionaryPicker` or `WBLanguageManager.shared.localizedString("key")`
 
 to take out the text first and then add attributes.
 
 use `WBLanguageDictionaryPicker`:
 
 ```swift
-label.lt.attributedPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+label.lt.attributedPicker = WBLanguageDictionaryPicker(["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
 ```
 another:
 
 ```swift
-if let text = WBLanguageManager.textForKey("Label") {
+if let text = WBLanguageManager.shared.localizedString("Label") {
     let att = NSAttributedString(string: text, attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor: UIColor.black])
     label.attributedText = att
 }
@@ -197,7 +217,7 @@ textfield.lt.placeHolderPicker = "Label"
 attribute picker:
 
 ```swift
-textfield.lt.attributedPlaceHolderPicker = WBLanguageDictionaryPicker(dicts: ["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
+textfield.lt.attributedPlaceHolderPicker = WBLanguageDictionaryPicker(["picker": "Label", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)])
 ```
 
 ### UIButton
@@ -210,7 +230,7 @@ button.lt.setPicker("Button", forState: .normal)
 attribute text:
 
 ```swift
-let picker = WBLanguageDictionaryPicker(dicts: ["picker": "Button", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedStringKey.strikethroughStyle:NSUnderlineStyle.styleDouble.rawValue])
+let picker = WBLanguageDictionaryPicker(["picker": "Button", NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedStringKey.strikethroughStyle:NSUnderlineStyle.styleDouble.rawValue])
 button.lt.setAttributedPicker(picker, forState: .normal)
 ```
 
