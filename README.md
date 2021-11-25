@@ -76,14 +76,14 @@ Run `carthage` to build the framework and drag the built `WBLanguage.framework` 
     
 ## Requirements
 
-- iOS 8+
-- Xcode 9.0+
-- Swift 4.0+
+- iOS 9+
+- Xcode 10.0+
+- Swift 5.0+
 
 | WBLanguage Version | Minimum iOS Target | Note |
 |:------------------:|:-------------------:|:-----|
 | 1.x | iOS 8 | Xcode 9+ is required. |
-| 2.x | iOS 8 | Xcode 9+ is required. |
+| 2.x | iOS 9 | Xcode 10+ is required. |
 
 you can create a `Language.bundle` resources in your project to hold the international language.
 otherwise, it will search from the `main.bundle` resources.
